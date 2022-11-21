@@ -5,7 +5,7 @@ import App from "./App";
 
 // import useToggle from "./hooks/useToggle";
 
-// Learning React Custom Hooks
+// // Learning React Custom Hooks
 // function Toggler() {
 //   const [isHappy, toggleIsHappy] = useToggle(true);
 //   const [isBanana, toggleIsBanana] = useToggle(true);
