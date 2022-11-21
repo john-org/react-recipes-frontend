@@ -8,10 +8,18 @@ import RecipeDetail from "./RecipeDetail";
 import Nav from "./Nav";
 
 import { useFetch } from "./hooks/useFetch";
+import useToggle from "./hooks/useToggle";
 
 function App() {
+  // Now it is its own Component Recipe.jsx
   //   const [recipes, setRecipes] = React.useState([]);
-  const [loggedin, setLoggedin] = React.useState(false);
+
+  // Logged In state using React useState
+  //   const [loggedin, setLoggedin] = React.useState(false);
+
+  // Logged In status using React Custom Hooks
+  const [loggedin, setLoggedin] = useToggle(false);
+
   const { loading, data: recipes, error } = useFetch(`/api/recipes`);
 
   if (loading === true) {
@@ -49,7 +57,9 @@ function App() {
   return (
     <main>
       <BrowserRouter>
+        {/* Uses Custom Hook */}
         <Nav setLoggedin={setLoggedin} loggedin={loggedin} />
+
         <Routes>
           <Route
             path="/"

@@ -22,25 +22,26 @@ const NavStyles = styled.nav`
   }
 `;
 
-const Nav = ({ loggedin, setLoggedin }) => {
+const Nav = ({ setLoggedin, loggedin }) => {
   return (
     <NavStyles>
       <h1>
         <Link to="/">Recipes</Link>
       </h1>
-
       {/* Replaced by Button Styled Component */}
       {/* {loggedin ? (
         <button onClick={() => setLoggedin(false)}>Log Out</button>
       ) : (
         <button onClick={() => setLoggedin(true)}>Log In</button>
       )} */}
-
-      {loggedin ? (
+      {/* Button Styled Component */}
+      {/* {loggedin ? (
         <Button func={() => setLoggedin(false)}>Log Out</Button>
       ) : (
         <Button func={() => setLoggedin(true)}>Log In</Button>
-      )}
+      )} */}
+      {/* Button Styled Component with Custom Hook */}
+      <Button func={setLoggedin}>{loggedin ? "Log Out" : "Log In"}</Button>
     </NavStyles>
   );
 };

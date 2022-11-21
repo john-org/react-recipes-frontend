@@ -14,6 +14,6 @@ const StyledButton = styled.button`
   cursor: pointer;
 `;
 
-export default function Button({ children, func }) {
+export default function Button({ func, children }) {
   return <StyledButton onClick={func}>{children}</StyledButton>;
 }
