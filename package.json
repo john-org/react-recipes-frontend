@@ -2,7 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3456/",
+  "proxy": "https://react-recipes-backend.herokuapp.com/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -37,5 +37,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "comments": {
+    "proxy": "http://localhost:3456/",
+    "description": "Backend running in Heroky and Frontend running in Netlify",
+    "license": "Still deciding MIT or BSD"
   }
 }
