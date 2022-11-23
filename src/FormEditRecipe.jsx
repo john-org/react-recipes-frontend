@@ -1,55 +1,36 @@
-// import React from "react";
-
-// const FormCreateRecipe = () => {
-//   return (
-//     <div>
-//       <h3>Add Recipe Form</h3>
-//       <form>
-//         <input type="text" placeholder="Recipe name" />
-//         <input type="text" placeholder="Recipe image" />
-//         <textarea type="text" placeholder="Recipe description" />
-//         <button type="submit">Add Recipe</button>
-//       </form>
-//     </div>
-//   );
-// };
-
-// export default FormCreateRecipe;
-
 import React from "react";
 import Button from "./Button";
 
-const FormCreateRecipe = ({ addRecipe }) => {
+const FormEditRecipe = ({ editRecipe, thisRecipe }) => {
   const [values, setValues] = React.useState({
-    title: "Recipe Title",
-    image: "toast.png",
-    description: "Description of the recipe",
-    year: "2022",
+    title: thisRecipe.title,
+    image: thisRecipe.image,
+    description: thisRecipe.description,
+    year: thisRecipe.year,
   });
 
-  const createRecipe = (event) => {
+  const updateRecipe = (event) => {
     event.preventDefault();
     const recipe = {
+      ...thisRecipe,
       title: values.title,
       image: values.image,
       description: values.description,
       year: values.year,
     };
-    console.log(" making a recipe ", recipe);
-    addRecipe(recipe);
+    editRecipe(recipe);
   };
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     console.log(" name:: ", name, " value:: ", value);
-    // computed property names
     setValues({ ...values, [name]: value });
   };
 
   return (
     <div>
-      <h3>Add Recipe Form</h3>
-      <form onSubmit={createRecipe}>
+      <h3>Edit Recipe</h3>
+      <form onSubmit={updateRecipe}>
         <input
           type="text"
           placeholder="Recipe title"
@@ -78,10 +59,10 @@ const FormCreateRecipe = ({ addRecipe }) => {
           onChange={handleInputChange}
         />
 
-        <Button type="submit">Add Recipe</Button>
+        <Button type="submit">Edit Recipe</Button>
       </form>
     </div>
   );
 };
 
-export default FormCreateRecipe;
+export default FormEditRecipe;
