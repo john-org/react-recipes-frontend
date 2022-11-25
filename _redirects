@@ -1,0 +1,2 @@
+/api/*  https://react-recipes-backend.herokuapp.com/api/:splat 200
+/img/*  https://react-recipes-backend.herokuapp.com/img/:splat 200
