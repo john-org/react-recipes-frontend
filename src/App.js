@@ -58,24 +58,23 @@ function App() {
     return <p>{error}</p>;
   }
 
-  const value = { recipes, loggedin };
+  const value = {
+    recipes,
+    loggedin,
+    setLoggedin,
+    addRecipe,
+    deleteRecipe,
+    editRecipe,
+  };
 
   return (
     <RecipesContext.Provider value={value}>
       <main>
         <BrowserRouter>
-          <Nav setLoggedin={setLoggedin} />
+          <Nav />
           <Routes>
-            <Route path="/" element={<Recipes addRecipe={addRecipe} />} />
-            <Route
-              path="/:recipeId"
-              element={
-                <RecipeDetail
-                  editRecipe={editRecipe}
-                  deleteRecipe={deleteRecipe}
-                />
-              }
-            />
+            <Route path="/" element={<Recipes />} />
+            <Route path="/:recipeId" element={<RecipeDetail />} />
           </Routes>
         </BrowserRouter>
       </main>

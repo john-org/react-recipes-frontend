@@ -4,8 +4,9 @@ import { Link, useParams } from "react-router-dom";
 
 import RecipesContext from "./RecipesContext";
 
-function RecipeDetail({ deleteRecipe, editRecipe }) {
-  const { recipes, loggedin } = React.useContext(RecipesContext);
+function RecipeDetail() {
+  const { recipes, loggedin, deleteRecipe, editRecipe } =
+    React.useContext(RecipesContext);
   const { recipeId } = useParams();
   const [recipeDeleted, setRecipeDeleted] = React.useState(false);
 
