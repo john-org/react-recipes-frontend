@@ -7,8 +7,6 @@ function Recipe({ recipe }) {
     <summary>
       <img src={`img/${image}`} alt={title} />
       <h3>
-        {/* Before Linking */}
-        {/* <a href={_id}>{title}</a> */}
         <Link to={_id}>{title}</Link>
       </h3>
       <p>{description}</p>

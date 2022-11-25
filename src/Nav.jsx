@@ -1,12 +1,11 @@
 import React from "react";
-
-import Button from "./Button";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import Button from "./Button";
 
 const NavStyles = styled.nav`
-  --bg-color: #007eb6;
-  --btn-color: var(--blue-dark);
+  --bg-color: var(--blue-dark);
+  --btn-color: #007eb6;
   min-height: 3rem;
   background-color: var(--bg-color);
   margin-bottom: 1rem;
@@ -28,13 +27,6 @@ const Nav = ({ loggedin, setLoggedin }) => {
       <h1>
         <Link to="/">Recipes</Link>
       </h1>
-
-      {/* Replaced by Button Styled Component */}
-      {/* {loggedin ? (
-        <button onClick={() => setLoggedin(false)}>Log Out</button>
-      ) : (
-        <button onClick={() => setLoggedin(true)}>Log In</button>
-      )} */}
 
       {loggedin ? (
         <Button func={() => setLoggedin(false)}>Log Out</Button>
